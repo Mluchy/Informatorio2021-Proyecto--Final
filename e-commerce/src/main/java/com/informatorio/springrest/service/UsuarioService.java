@@ -23,7 +23,7 @@ public class UsuarioService {
     //Para el Get > todas las consultas
     public List<Usuario> usFindBy(Long id, String ciudad, LocalDate fechaAlta) {
 
-        List<Usuario> usuarioList = new ArrayList<Usuario>();
+        List<Usuario> usuarioList = new ArrayList<>();
 
         if (Objects.nonNull(id)) {
             usuarioList.add(usuarioRepository.findOneById(id));

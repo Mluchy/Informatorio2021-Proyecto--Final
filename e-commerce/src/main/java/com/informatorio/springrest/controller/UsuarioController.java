@@ -25,30 +25,7 @@ public class UsuarioController {
     }
 
 
-
-    /* TODO
-     * 1- ALTA, BAJA Y MODIFICACIÓN
-     * 2- CONSULTA (OBTENER TODOS LOS USUARIOS) -> ESCONDER PAS
-     * 3- CONSULTA (OBTENER TODOS LOS USUARIOS DE LA CIUDAD DE RESISTENCIA)
-     * 4- CONSULTA (OBTENER TODOS LOS USUARIOS QUE FUERON CREADOS DESPUÉS DE UNA FECHA)
-     *
-     * Borrar carga Bulk de Usuario > es sólo una carga rápida para probar
-     *
-     * Agregar los errorHandler
-     *
-     * */
-
     // ============ ALTA ============
-
-    //POST bulk de usuarios > DEBO BORRAR
-//    @PostMapping("/bulk")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Iterable<Usuario> usuarioCreate(@Valid @RequestBody List<Usuario> usuario) {
-//        return usuarioRepository.saveAll(usuario);
-//    }
-
-
-    //POST un usuario
     @PostMapping
     public ResponseEntity<?> usuarioCreate(@Valid @RequestBody Usuario usuario) {
         return new ResponseEntity<>(usuarioService.usSave(usuario),HttpStatus.CREATED);
@@ -67,8 +44,6 @@ public class UsuarioController {
         return new ResponseEntity<Usuario>(usuarioService.usModify(id, usuario),HttpStatus.OK);
     }
 
-
-
     // ============ CONSULTAS ============
     @GetMapping({"", "/{id}"})
     public ResponseEntity<?> usuariosConsultas(
@@ -80,8 +55,5 @@ public class UsuarioController {
         List<Usuario> usuariosList = usuarioService.usFindBy(id, ciudad, fechaAlta);
         return new ResponseEntity<List<Usuario>>(usuariosList,HttpStatus.OK);
     }
-
-
-
 
 }
