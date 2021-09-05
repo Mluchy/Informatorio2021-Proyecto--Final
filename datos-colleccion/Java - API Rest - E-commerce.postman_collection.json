@@ -1,0 +1,857 @@
+{
+	"info": {
+		"_postman_id": "2b54b538-fbb8-43a4-95e3-b1d7667b5f12",
+		"name": "Java - API Rest - E-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET: Todos los Usuarios",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Usuario por Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Usuarios creados luego de una Fecha dada",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios?fechaAlta=2021-09-01",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									],
+									"query": [
+										{
+											"key": "fechaAlta",
+											"value": "2021-09-01"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Usuario por ciudad",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios?ciudad=Resistencia",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									],
+									"query": [
+										{
+											"key": "ciudad",
+											"value": "Resistencia"
+										},
+										{
+											"key": "ciudad",
+											"value": "reSistEncia",
+											"disabled": true
+										},
+										{
+											"key": "ciudad",
+											"value": "Barranqueras",
+											"disabled": true
+										},
+										{
+											"key": "ciudad",
+											"value": "Buenos Aires",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST: Un Usuario",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Buffy\",\r\n    \"apellido\": \"Summers\",\r\n    \"email\": \"buffysum@gmail.com\",\r\n    \"password\": \"slayer1234\",\r\n    \"ciudad\": \"Resistencia\",\r\n    \"provincia\": \"Chaco\",\r\n    \"pais\": \"Argentina\"\r\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT: Cambiar Password, Ciudad, Provincia y País",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"slayer1422\",\r\n    \"ciudad\": \"Rosario\",\r\n    \"provincia\": \"Santa Fe\",\r\n    \"pais\": \"Argentina\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Password",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"buffyTheVampireSlayer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Ciudad",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ciudad\": \"Santiago\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Provincia",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"provincia\": \"Santiago\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar País",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"pais\": \"Chile\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE: Un Usuario",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET: Todos los Productos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Producto por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Productos que contangan una palabra dada en el Nombre",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos?nombre=llavero",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos"
+									],
+									"query": [
+										{
+											"key": "nombre",
+											"value": "llavero"
+										},
+										{
+											"key": "nombre",
+											"value": "CARTUCHERA",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Productos sin publicar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos?publicado=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos"
+									],
+									"query": [
+										{
+											"key": "publicado",
+											"value": "false"
+										},
+										{
+											"key": "publicado",
+											"value": "true",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST: Un Producto",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"nombre\": \"BOTELLA DEPORTIVA DE PLASTICO\",\r\n        \"descripcion\": \"500 ml\",\r\n        \"precioUnitario\": 179,\r\n        \"contenido\": \"Material Coleres etc\",\r\n        \"publicado\": \"true\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "POST:  Productos Bulk Load",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n  {\r\n    \"nombre\": \"BOLiGRAFO PLASTICO\",\r\n    \"descripcion\": \"Boligrafo con cuerpo plastico de color.\",\r\n    \"precioUnitario\": 30,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"REMERA\",\r\n    \"descripcion\": \"De algodon\",\r\n    \"precioUnitario\": 749,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"GORRA\",\r\n    \"descripcion\": \"De microfibra con respirador lateral\",\r\n    \"precioUnitario\": 321,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"BUZO\",\r\n    \"descripcion\": \"Confeccionada en frisa de algodon\",\r\n    \"precioUnitario\": 1360,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"LLAVERO CON LUZ\",\r\n    \"descripcion\": \"Cuerpo rectangular con dos colores\",\r\n    \"precioUnitario\": 190,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"CUADERNO ANILLADO\",\r\n    \"descripcion\": \"Hojas rayadas\",\r\n    \"precioUnitario\": 350,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"CUADERNO DE TAPA DURA\",\r\n    \"descripcion\": \"Hojas lisas\",\r\n    \"precioUnitario\": 550,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"MOCHILA\",\r\n    \"descripcion\": \"Confeccionada en polyester\",\r\n    \"precioUnitario\": 2659,\r\n    \"contenido\": \"Colores Dimensiones etc\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"NECESSAIRE\",\r\n    \"descripcion\": \"Varios bolsillos\",\r\n    \"precioUnitario\": 1490,\r\n    \"contenido\": \"Colores\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"BOLSO MATERO\",\r\n    \"descripcion\": \"De poliester con cinta pampa en el frente\",\r\n    \"precioUnitario\": 1600,\r\n    \"contenido\": \"Colores\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"CAMPERA\",\r\n    \"descripcion\": \"Confeccionada en microfibra combinando tres colores\",\r\n    \"precioUnitario\": 2400,\r\n    \"contenido\": \"Talles  Largo de las mangas etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"LLAVERO ACRILICO\",\r\n    \"descripcion\": \"Varias formas\",\r\n    \"precioUnitario\": 190,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"LLAVERO CON DESTAPADOR\",\r\n    \"descripcion\": \"Metalico con detalles en colores\",\r\n    \"precioUnitario\": 80,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"VASO DE VIDRIO\",\r\n    \"descripcion\": \"330 ml\",\r\n    \"precioUnitario\": 65,\r\n    \"contenido\": \"\",\r\n    \"publicado\": \"false\"\r\n  },\r\n  {\r\n    \"nombre\": \"CARTUCHERA CILINDRO\",\r\n    \"descripcion\": \"Tela estampada\",\r\n    \"precioUnitario\": 583,\r\n    \"contenido\": \"Colores Dimensiones etc\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"JARRO TERMICO PLASTICO\",\r\n    \"descripcion\": \"Con tapa. 400 ml.\",\r\n    \"precioUnitario\": 630,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"JARRO TERMICO METALICO\",\r\n    \"descripcion\": \"Con tapa. 500 ml.\",\r\n    \"precioUnitario\": 1077,\r\n    \"contenido\": \"Detalles\",\r\n    \"publicado\": \"false\"\r\n  },\r\n  {\r\n    \"nombre\": \"MOUSE PAD PEQUEÑO\",\r\n    \"descripcion\": \"De neoprene y base antideslizante\",\r\n    \"precioUnitario\": 150,\r\n    \"contenido\": \"Colores Dimensiones etc\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"MOUSE PAD MEDIANO\",\r\n    \"descripcion\": \"De neoprene y base antideslizante\",\r\n    \"precioUnitario\": 300,\r\n    \"contenido\": \"Colores Dimensiones etc\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"MOUSE PAD GRANDE\",\r\n    \"descripcion\": \"De neoprene y base antideslizante\",\r\n    \"precioUnitario\": 890,\r\n    \"contenido\": \"Colores Dimensiones etc\",\r\n    \"publicado\": \"false\"\r\n  },\r\n  {\r\n    \"nombre\": \"BOLIGRAFO METALICO\",\r\n    \"descripcion\": \"Incluye estuche\",\r\n    \"precioUnitario\": 1945,\r\n    \"contenido\": \"Colores etc.\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"BOTELLA TERMICA DEPORTIVA\",\r\n    \"descripcion\": \"750 ml\",\r\n    \"precioUnitario\": 1999,\r\n    \"contenido\": \"Material\",\r\n    \"publicado\": \"true\"\r\n  },\r\n  {\r\n    \"nombre\": \"BOTELLA DE VIDRIO\",\r\n    \"descripcion\": \"1 L\",\r\n    \"precioUnitario\": 280,\r\n    \"contenido\": \"Material\",\r\n    \"publicado\": \"false\"\r\n  }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT: Cambiar Descripción, Precio Unitario, Contenido y Publicado",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"descripcion\": \"Con tapa. De 420 ml\",\r\n    \"precioUnitario\": 500,\r\n    \"contenido\": \"Sólo blanco y negro.\",\r\n    \"publicado\": \"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Descripción",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"descripcion\": \"Sin tapa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Contenido",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contenido\": \"Material de pvc y vidrio\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Precio Unitario",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"precioUnitario\": 400\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT: Cambiar Publicado",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"publicado\": \"false\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"16"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "DELETE: Un Producto",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/productos/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"productos",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Carrito",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GET: Todos los Carritos de un Usuario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/3/carritos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"3",
+										"carritos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET: Carrito Activo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/3/estado",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"3",
+										"estado"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "POST: Un Carrito",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"device\": \"web\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/6/carritos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"6",
+										"carritos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "PUT: Agregar Productos al Carrito",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cantidad\": 2,\r\n    \"productoId\": 10\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/usuarios/3/carritos/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"3",
+										"carritos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": []
+				}
+			]
+		}
+	]
+}
