@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -23,6 +24,7 @@ public class Producto {
     private String descripcion;
 
     @NotNull
+    @Positive
     @Column(name = "precio_unitario")
     private BigDecimal precioUnitario;
 

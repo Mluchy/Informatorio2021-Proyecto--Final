@@ -11,6 +11,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -49,6 +51,8 @@ public class Usuario {
     @NotBlank
     private String pais;
 
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Carrito> carritos = new ArrayList<>();
 
     public Usuario() {
     }
@@ -124,5 +128,52 @@ public class Usuario {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    public List<Carrito> getCarritos() {
+        return carritos;
+    }
+
+    public void setCarritos(List<Carrito> carritos) {
+        this.carritos = carritos;
+    }
+
+    public void agregarCarrito(Carrito carrito) {
+        carritos.add(carrito);
+        carrito.setUsuario(this);
+    }
+
+    public void removerCarrito(Carrito carrito) {
+        carritos.remove(carrito);
+        carrito.setUsuario(null);
+    }
+
+    /*
+    *  //Getters
+    public Long getId() {return id;}
+    public Boolean getEstado() {return estado;}
+    public Long getUsuarioId() {return usuario.getId();}
+    @JsonIgnore
+    public Usuario getUsuario() {return usuario;}
+    public Date getFecha_creacion() {return fecha_creacion;}
+    public List<Detalle> getDetalle() {return detalle;}
+    public Origen getOrigen() {return origen;}
+    @Transient
+    public Double getCostoTotal(){
+        Double total = 0.0;
+        for ( Detalle d : this.getDetalle()){
+            total = d.getSubTotal() + total;
+        }
+        return total;
+    }
+
+    //Setters
+    public void addDetalle(Detalle detalle){this.getDetalle().add(detalle);}
+    public void removeDetalle(Detalle detalle){
+        this.getDetalle().remove(detalle);
+    }
+    public void setEstado(Boolean estado) {this.estado = estado;}
+    public void setUsuario(Usuario usuario) {this.usuario = usuario;}
+    public void setOrigen(Origen origen) { this.origen = origen;}
+    * */
 
 }
